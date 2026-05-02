@@ -45,14 +45,14 @@ function StatCard({ icon: Icon, label, value, suffix, active }: (typeof STATS)[0
       whileHover={{ scale: 1.04, y: -2 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className="flex flex-col items-center justify-center gap-1.5 rounded-2xl p-4 text-center
-                 bg-white/[0.04] border border-white/[0.08]
-                 hover:border-violet-500/40 hover:bg-white/[0.07] transition-colors duration-300"
+                 bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.08] dark:border-white/[0.08]
+                 hover:border-violet-500/40 hover:bg-slate-900/[0.07] dark:bg-white/[0.07] transition-colors duration-300"
     >
       <div className="w-9 h-9 rounded-xl bg-violet-500/15 flex items-center justify-center mb-1">
         <Icon className="text-violet-400" size={18} />
       </div>
-      <span className="font-space-grotesk font-black text-2xl text-white leading-none">{count}{suffix}</span>
-      <span className="text-white/40 text-xs font-inter leading-tight">{label}</span>
+      <span className="font-space-grotesk font-black text-2xl text-slate-900 dark:text-white leading-none">{count}{suffix}</span>
+      <span className="text-slate-900/40 dark:text-white/40 text-xs font-inter leading-tight">{label}</span>
     </motion.div>
   );
 }
@@ -71,8 +71,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="about" ref={ref} className="relative py-28 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0a0a0f 0%, #0d0d18 100%)" }}>
+    <section id="about" ref={ref} className="relative py-28 overflow-hidden bg-gradient-to-b from-white to-slate-50 dark:from-[#0a0a0f] dark:to-[#0d0d18]">
 
       <div aria-hidden className="pointer-events-none absolute -top-40 left-1/3 w-[500px] h-[500px] rounded-full"
         style={{ background: "radial-gradient(circle, rgba(109,40,217,0.08) 0%, transparent 70%)" }} />
@@ -91,8 +90,8 @@ export default function About() {
 
           {/* LEFT — photo + stats */}
           <motion.div variants={itemV} className="flex flex-col gap-6">
-            <div className="relative rounded-3xl overflow-hidden border border-white/[0.08] bg-white/[0.03] group">
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a0a0f]/80 z-10" />
+            <div className="relative rounded-3xl overflow-hidden border border-slate-900/[0.08] dark:border-white/[0.08] bg-slate-900/[0.03] dark:bg-white/[0.03] group">
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/80 dark:to-[#0a0a0f]/80 z-10" />
               <div className="absolute inset-0 bg-gradient-to-br from-violet-600/0 to-indigo-600/0
                               group-hover:from-violet-600/10 group-hover:to-indigo-600/10 transition-all duration-500 z-10" />
               <div className="relative w-full aspect-[9/16]">
@@ -100,12 +99,12 @@ export default function About() {
                   sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-center" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 z-20 p-5">
-                <p className="font-space-grotesk font-bold text-white text-lg">Sainul Abid M</p>
+                <p className="font-space-grotesk font-bold text-slate-900 dark:text-white text-lg">Sainul Abid M</p>
                 <p className="text-violet-400 text-sm font-inter">CTO · Director · AI Architect</p>
               </div>
               <a href="https://linkedin.com/in/sainulabid" target="_blank" rel="noopener noreferrer"
                 className="absolute top-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full
-                           text-xs font-inter font-semibold bg-[#0077b5]/80 text-white backdrop-blur-sm
+                           text-xs font-inter font-semibold bg-[#0077b5]/80 text-slate-900 dark:text-white backdrop-blur-sm
                            hover:bg-[#0077b5] transition-colors duration-200">
                 LinkedIn <BsArrowUpRight size={10} />
               </a>
@@ -118,36 +117,36 @@ export default function About() {
 
           {/* RIGHT — bio */}
           <motion.div variants={itemV} className="flex flex-col gap-7">
-            <h2 className="font-space-grotesk font-black text-3xl sm:text-4xl text-white leading-tight">
+            <h2 className="font-space-grotesk font-black text-3xl sm:text-4xl text-slate-900 dark:text-white leading-tight">
               Building the{" "}
               <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">future</span>
               {" "}of intelligent systems
             </h2>
 
-            <div className="space-y-5 text-white/60 font-inter text-base leading-relaxed">
+            <div className="space-y-5 text-slate-900/60 dark:text-white/60 font-inter text-base leading-relaxed">
               <p>
                 I&apos;m an AI Technology Leader driving innovation at the intersection of{" "}
                 <span className="text-violet-400 font-medium">Generative AI</span>, machine learning,
                 and immersive technologies. Currently serving as{" "}
-                <span className="text-white/85 font-medium">CTO at Iluzia Labs</span> and{" "}
-                <span className="text-white/85 font-medium">Director at AyaTech</span>, I architect
+                <span className="text-slate-900/85 dark:text-white/85 font-medium">CTO at Iluzia Labs</span> and{" "}
+                <span className="text-slate-900/85 dark:text-white/85 font-medium">Director at AyaTech</span>, I architect
                 intelligent systems—from enterprise GenAI chatbots and RAG pipelines to VR learning
                 environments and data-driven EdTech platforms.
               </p>
               <p>
                 My work spans pharma IT automation, retail AI, cognitive science research, and
                 sustainable urbanization—each driven by one belief:{" "}
-                <span className="text-white/90 font-semibold italic">technology should solve real human problems.</span>
+                <span className="text-slate-900/90 dark:text-white/90 font-semibold italic">technology should solve real human problems.</span>
               </p>
             </div>
 
             <div>
-              <p className="text-white/30 text-xs font-inter uppercase tracking-widest mb-3 font-semibold">Focus Areas</p>
+              <p className="text-slate-900/30 dark:text-white/30 text-xs font-inter uppercase tracking-widest mb-3 font-semibold">Focus Areas</p>
               <div className="flex flex-wrap gap-2">
                 {HIGHLIGHTS.map(({ color, label }) => (
                   <span key={label}
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-inter
-                               font-semibold text-white/85 bg-white/[0.05] border border-white/[0.08]
+                               font-semibold text-slate-900/85 dark:text-white/85 bg-slate-900/[0.05] dark:bg-white/[0.05] border border-slate-900/[0.08] dark:border-white/[0.08]
                                hover:border-violet-500/40 transition-colors duration-200">
                     <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${color} flex-shrink-0`} />
                     {label}
@@ -156,7 +155,7 @@ export default function About() {
               </div>
             </div>
 
-            <blockquote className="pl-5 border-l-2 border-violet-500/50 text-white/40 font-inter italic text-sm leading-relaxed">
+            <blockquote className="pl-5 border-l-2 border-violet-500/50 text-slate-900/40 dark:text-white/40 font-inter italic text-sm leading-relaxed">
               &ldquo;From pharma automation to VR classrooms — every system I build is one step closer
               to technology that truly serves humanity.&rdquo;
             </blockquote>

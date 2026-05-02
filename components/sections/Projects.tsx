@@ -85,8 +85,8 @@ function ProjectCard({
 
       <div className={`
         relative flex flex-col h-full rounded-2xl overflow-hidden
-        bg-[#0d0d1a] border
-        ${project.featured ? "border-white/[0.10]" : "border-white/[0.07]"}
+        bg-slate-50 dark:bg-[#0d0d1a] border
+        ${project.featured ? "border-slate-900/[0.10] dark:border-white/[0.10]" : "border-slate-900/[0.07] dark:border-white/[0.07]"}
         group-hover:border-transparent transition-colors duration-300
         shadow-lg group-hover:shadow-2xl group-hover:shadow-violet-500/10
       `}>
@@ -99,13 +99,13 @@ function ProjectCard({
           )}
           {/* featured star badge */}
           {project.featured && (
-            <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10 text-yellow-400 text-xs font-inter font-semibold">
+            <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-slate-900/10 dark:border-white/10 text-yellow-400 text-xs font-inter font-semibold">
               <HiOutlineStar size={11} />
               Featured
             </div>
           )}
           {/* gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0d0d1a] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-50 dark:from-[#0d0d1a] via-transparent to-transparent" />
         </div>
 
         {/* body */}
@@ -124,21 +124,21 @@ function ProjectCard({
           </div>
 
           {/* title */}
-          <h3 className="font-space-grotesk font-bold text-white text-base leading-snug mb-2 group-hover:text-violet-200 transition-colors duration-200">
+          <h3 className="font-space-grotesk font-bold text-slate-900 dark:text-white text-base leading-snug mb-2 group-hover:text-violet-200 transition-colors duration-200">
             {project.title}
           </h3>
 
           {/* 2-line description */}
-          <p className="text-white/50 text-sm font-inter leading-relaxed line-clamp-2 flex-1">
+          <p className="text-slate-900/50 dark:text-white/50 text-sm font-inter leading-relaxed line-clamp-2 flex-1">
             {project.description}
           </p>
 
           {/* footer */}
-          <div className="mt-4 pt-4 border-t border-white/[0.06] flex items-center justify-between">
+          <div className="mt-4 pt-4 border-t border-slate-900/[0.06] dark:border-white/[0.06] flex items-center justify-between">
             <span className="text-violet-400/70 text-xs font-inter">Click to explore →</span>
             <div className="flex gap-2">
-              {project.liveUrl && <HiOutlineExternalLink size={14} className="text-white/30" />}
-              {project.repoUrl && <HiOutlineCode size={14} className="text-white/30" />}
+              {project.liveUrl && <HiOutlineExternalLink size={14} className="text-slate-900/30 dark:text-white/30" />}
+              {project.repoUrl && <HiOutlineCode size={14} className="text-slate-900/30 dark:text-white/30" />}
             </div>
           </div>
         </div>
@@ -165,13 +165,13 @@ function ProjectModal({
         onClick={onClose} />
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4 pointer-events-none">
         <motion.div variants={modalV} initial="hidden" animate="show" exit="exit"
-          className="relative w-full max-w-xl bg-[#0d0d1a] border border-white/[0.10] rounded-3xl overflow-hidden shadow-2xl pointer-events-auto">
+          className="relative w-full max-w-xl bg-slate-50 dark:bg-[#0d0d1a] border border-slate-900/[0.10] dark:border-white/[0.10] rounded-3xl overflow-hidden shadow-2xl pointer-events-auto">
 
           {/* gradient header */}
           <div className={`h-2 w-full bg-gradient-to-r ${grad}`} />
 
           {/* close */}
-          <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/[0.07] hover:bg-white/[0.12] flex items-center justify-center text-white/60 hover:text-white transition-all">
+          <button onClick={onClose} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-900/[0.07] dark:bg-white/[0.07] hover:bg-slate-900/[0.12] dark:bg-white/[0.12] flex items-center justify-center text-slate-900/60 dark:text-white/60 hover:text-slate-900 dark:text-white transition-all">
             <HiOutlineX size={16} />
           </button>
 
@@ -189,25 +189,25 @@ function ProjectModal({
               )}
             </div>
 
-            <h2 className="font-space-grotesk font-black text-2xl sm:text-3xl text-white mb-4">{project.title}</h2>
-            <p className="text-white/60 font-inter text-sm sm:text-base leading-relaxed mb-6">{project.description}</p>
+            <h2 className="font-space-grotesk font-black text-2xl sm:text-3xl text-slate-900 dark:text-white mb-4">{project.title}</h2>
+            <p className="text-slate-900/60 dark:text-white/60 font-inter text-sm sm:text-base leading-relaxed mb-6">{project.description}</p>
 
             {/* links */}
             <div className="flex gap-3">
               {project.liveUrl && (
                 <a href={project.liveUrl} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-inter font-semibold text-white bg-gradient-to-r from-violet-600 to-indigo-500 hover:opacity-90 transition-opacity">
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-inter font-semibold text-slate-900 dark:text-white bg-gradient-to-r from-violet-600 to-indigo-500 hover:opacity-90 transition-opacity">
                   <HiOutlineExternalLink size={14} /> Live Demo
                 </a>
               )}
               {project.repoUrl && (
                 <a href={project.repoUrl} target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-inter font-semibold text-white/80 border border-white/20 hover:border-violet-500/50 hover:text-white transition-all">
+                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-inter font-semibold text-slate-900/80 dark:text-white/80 border border-slate-900/20 dark:border-white/20 hover:border-violet-500/50 hover:text-slate-900 dark:text-white transition-all">
                   <HiOutlineCode size={14} /> Source
                 </a>
               )}
               {!project.liveUrl && !project.repoUrl && (
-                <span className="text-white/30 text-sm font-inter italic">Proprietary / NDA — details on request</span>
+                <span className="text-slate-900/30 dark:text-white/30 text-sm font-inter italic">Proprietary / NDA — details on request</span>
               )}
             </div>
           </div>
@@ -229,8 +229,7 @@ export default function Projects() {
   );
 
   return (
-    <section id="projects" ref={ref} className="relative py-28 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0d0d18 0%, #0a0a0f 100%)" }}>
+    <section id="projects" ref={ref} className="relative py-28 overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-[#0d0d18] dark:to-[#0a0a0f]">
 
       <div aria-hidden className="pointer-events-none absolute top-0 right-0 w-[600px] h-[600px]"
         style={{ background: "radial-gradient(circle at top right, rgba(108,99,255,0.07) 0%, transparent 60%)" }} />
@@ -246,7 +245,7 @@ export default function Projects() {
 
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-space-grotesk font-black text-3xl sm:text-4xl text-white mb-8">
+          className="font-space-grotesk font-black text-3xl sm:text-4xl text-slate-900 dark:text-white mb-8">
           Selected{" "}
           <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Work</span>
         </motion.h2>
@@ -259,8 +258,8 @@ export default function Projects() {
             <button key={f} id={`filter-${f.replace("/","")}`} onClick={() => setFilter(f)}
               className={`px-4 py-2 rounded-xl text-sm font-inter font-semibold transition-all duration-200
                 ${filter === f
-                  ? "bg-gradient-to-r from-violet-600 to-indigo-500 text-white shadow-lg shadow-violet-500/20"
-                  : "bg-white/[0.05] text-white/50 hover:text-white hover:bg-white/[0.09] border border-white/[0.07]"
+                  ? "bg-gradient-to-r from-violet-600 to-indigo-500 text-slate-900 dark:text-white shadow-lg shadow-violet-500/20"
+                  : "bg-slate-900/[0.05] dark:bg-white/[0.05] text-slate-900/50 dark:text-white/50 hover:text-slate-900 dark:text-white hover:bg-slate-900/[0.09] dark:bg-white/[0.09] border border-slate-900/[0.07] dark:border-white/[0.07]"
                 }`}>
               {f}
             </button>

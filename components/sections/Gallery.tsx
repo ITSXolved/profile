@@ -32,7 +32,7 @@ export default function Gallery() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="gallery" ref={ref} className="py-24 relative overflow-hidden bg-[#0a0a0f]">
+    <section id="gallery" ref={ref} className="py-24 relative overflow-hidden bg-white dark:bg-[#0a0a0f]">
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-violet-500/20 to-transparent" />
       
@@ -43,10 +43,10 @@ export default function Gallery() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-space-grotesk font-black text-3xl sm:text-4xl text-white mb-4">
+          <h2 className="font-space-grotesk font-black text-3xl sm:text-4xl text-slate-900 dark:text-white mb-4">
             Leadership & <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Impact</span>
           </h2>
-          <p className="text-white/40 font-inter text-sm max-w-xl mx-auto">
+          <p className="text-slate-900/40 dark:text-white/40 font-inter text-sm max-w-xl mx-auto">
             Beyond the code: Snapshots of strategic collaboration, community engagement, and thought leadership.
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ export default function Gallery() {
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -10 }}
-              className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/[0.08] bg-white/[0.02]"
+              className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-slate-900/[0.08] dark:border-white/[0.08] bg-slate-900/[0.02] dark:bg-white/[0.02]"
             >
               <Image
                 src={img.src}
@@ -70,8 +70,8 @@ export default function Gallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <h3 className="font-space-grotesk font-bold text-white text-lg mb-1">{img.title}</h3>
-                <p className="text-white/60 text-xs font-inter leading-relaxed">{img.desc}</p>
+                <h3 className="font-space-grotesk font-bold text-slate-900 dark:text-white text-lg mb-1">{img.title}</h3>
+                <p className="text-slate-900/60 dark:text-white/60 text-xs font-inter leading-relaxed">{img.desc}</p>
               </div>
             </motion.div>
           ))}

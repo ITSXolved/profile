@@ -92,7 +92,7 @@ function TimelineCard({
             />
           )}
           <div
-            className="w-4 h-4 rounded-full border-2 border-[#0d0d18] z-10 relative"
+            className="w-4 h-4 rounded-full border-2 border-slate-50 dark:border-[#0d0d18] z-10 relative"
             style={{ background: meta.color, boxShadow: `0 0 12px ${meta.color}80` }}
           />
         </motion.div>
@@ -111,7 +111,7 @@ function TimelineCard({
           <div className="flex items-start gap-4 md:hidden mb-4">
             <div className="flex flex-col items-center mt-1.5 flex-shrink-0">
               <div
-                className="w-3.5 h-3.5 rounded-full border-2 border-[#0d0d18]"
+                className="w-3.5 h-3.5 rounded-full border-2 border-slate-50 dark:border-[#0d0d18]"
                 style={{ background: meta.color, boxShadow: `0 0 8px ${meta.color}80` }}
               />
             </div>
@@ -148,10 +148,10 @@ function Card({
     <div
       className={`
         relative rounded-2xl p-5 sm:p-6 border transition-all duration-300
-        bg-white/[0.03] hover:bg-white/[0.06]
+        bg-slate-900/[0.03] dark:bg-white/[0.03] hover:bg-slate-900/[0.06] dark:bg-white/[0.06]
         ${isHighlighted
           ? "border-opacity-60 shadow-lg"
-          : "border-white/[0.07] hover:border-white/[0.14]"
+          : "border-slate-900/[0.07] dark:border-white/[0.07] hover:border-slate-900/[0.14] dark:border-white/[0.14]"
         }
       `}
       style={
@@ -173,7 +173,7 @@ function Card({
 
       {/* Role */}
       <h3
-        className={`font-space-grotesk font-black text-xl sm:text-2xl text-white leading-tight mb-1 ${align === "right" ? "text-right" : ""}`}
+        className={`font-space-grotesk font-black text-xl sm:text-2xl text-slate-900 dark:text-white leading-tight mb-1 ${align === "right" ? "text-right" : ""}`}
       >
         {item.role}
       </h3>
@@ -190,7 +190,7 @@ function Card({
       {isHighlighted && meta.achievement && (
         <div className={`flex mb-4 ${align === "right" ? "justify-end" : ""}`}>
           <span
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-inter font-semibold text-white/90"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-inter font-semibold text-slate-900/90 dark:text-white/90"
             style={{ background: `${meta.color}22`, border: `1px solid ${meta.color}44` }}
           >
             <HiOutlineSparkles size={12} style={{ color: meta.color }} />
@@ -202,7 +202,7 @@ function Card({
       {/* Bullet points */}
       <ul className="space-y-2">
         {item.points.map((pt, i) => (
-          <li key={i} className={`flex gap-2.5 text-sm font-inter text-white/55 leading-relaxed ${align === "right" ? "flex-row-reverse text-right" : ""}`}>
+          <li key={i} className={`flex gap-2.5 text-sm font-inter text-slate-900/55 dark:text-white/55 leading-relaxed ${align === "right" ? "flex-row-reverse text-right" : ""}`}>
             <span className="mt-1.5 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: meta.color, opacity: 0.7 }} />
             <span>{pt}</span>
           </li>
@@ -221,8 +221,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="relative py-28 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0a0a0f 0%, #0d0d18 100%)" }}
+      className="relative py-28 overflow-hidden bg-gradient-to-b from-white to-slate-50 dark:from-[#0a0a0f] dark:to-[#0d0d18]"
     >
       {/* bg accent */}
       <div
@@ -250,7 +249,7 @@ export default function Experience() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-space-grotesk font-black text-3xl sm:text-4xl text-white mb-16"
+          className="font-space-grotesk font-black text-3xl sm:text-4xl text-slate-900 dark:text-white mb-16"
         >
           Career{" "}
           <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">

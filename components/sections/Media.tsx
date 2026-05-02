@@ -28,7 +28,7 @@ function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
   return (
     <div className="w-full max-w-4xl mx-auto">
       {/* Video player / thumbnail */}
-      <div className="relative w-full aspect-video rounded-3xl overflow-hidden border border-white/[0.08] bg-black shadow-2xl shadow-black/50 group">
+      <div className="relative w-full aspect-video rounded-3xl overflow-hidden border border-slate-900/[0.08] dark:border-white/[0.08] bg-black shadow-2xl shadow-black/50 group">
         <AnimatePresence mode="wait">
           {!playing ? (
             <motion.div
@@ -63,17 +63,17 @@ function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
                   className="relative"
                 >
                   {/* outer glow ring */}
-                  <div className="absolute inset-0 rounded-full bg-white/20 blur-xl scale-150" />
-                  <div className="relative w-20 h-20 rounded-full bg-white/95 flex items-center justify-center shadow-2xl shadow-black/50">
+                  <div className="absolute inset-0 rounded-full bg-slate-900/20 dark:bg-white/20 blur-xl scale-150" />
+                  <div className="relative w-20 h-20 rounded-full bg-slate-900/95 dark:bg-white/95 flex items-center justify-center shadow-2xl shadow-black/50">
                     <HiPlay size={32} className="text-violet-700 translate-x-0.5" />
                   </div>
                 </motion.div>
               </div>
 
               {/* YouTube badge */}
-              <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-sm border border-white/10">
+              <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/70 backdrop-blur-sm border border-slate-900/10 dark:border-white/10">
                 <FaYoutube size={16} className="text-red-500" />
-                <span className="text-white/80 text-xs font-inter font-semibold">{video.channel}</span>
+                <span className="text-slate-900/80 dark:text-white/80 text-xs font-inter font-semibold">{video.channel}</span>
               </div>
 
               {/* Tag badge */}
@@ -84,8 +84,8 @@ function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
 
               {/* Bottom title overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <p className="text-white/60 text-xs font-inter uppercase tracking-widest mb-1">{video.channel}</p>
-                <h3 className="text-white font-space-grotesk font-bold text-xl sm:text-2xl">{video.title}</h3>
+                <p className="text-slate-900/60 dark:text-white/60 text-xs font-inter uppercase tracking-widest mb-1">{video.channel}</p>
+                <h3 className="text-slate-900 dark:text-white font-space-grotesk font-bold text-xl sm:text-2xl">{video.title}</h3>
               </div>
             </motion.div>
           ) : (
@@ -108,18 +108,18 @@ function VideoCard({ video }: { video: (typeof VIDEOS)[number] }) {
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.5 }}
-        className="mt-6 flex flex-col sm:flex-row gap-4 sm:items-center justify-between p-5 rounded-2xl bg-white/[0.03] border border-white/[0.07]"
+        className="mt-6 flex flex-col sm:flex-row gap-4 sm:items-center justify-between p-5 rounded-2xl bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/[0.07] dark:border-white/[0.07]"
       >
         <div className="flex-1">
           <span className="text-xs font-inter font-semibold uppercase tracking-widest mb-2 block"
             style={{ color: video.tagColor }}>{video.tag}</span>
-          <p className="text-white/55 font-inter text-sm leading-relaxed max-w-2xl">{video.description}</p>
+          <p className="text-slate-900/55 dark:text-white/55 font-inter text-sm leading-relaxed max-w-2xl">{video.description}</p>
         </div>
         <a
           href={`https://youtu.be/${video.id}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-inter font-semibold text-white/80 border border-white/15 hover:border-violet-500/50 hover:text-white hover:bg-violet-500/10 transition-all duration-200"
+          className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-inter font-semibold text-slate-900/80 dark:text-white/80 border border-slate-900/15 dark:border-white/15 hover:border-violet-500/50 hover:text-slate-900 dark:text-white hover:bg-violet-500/10 transition-all duration-200"
         >
           <FaYoutube size={16} className="text-red-500" />
           Watch on YouTube
@@ -136,8 +136,7 @@ export default function Media() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="media" ref={ref} className="relative py-24 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0a0a0f 0%, #0d0d18 100%)" }}>
+    <section id="media" ref={ref} className="relative py-24 overflow-hidden bg-gradient-to-b from-white to-slate-50 dark:from-[#0a0a0f] dark:to-[#0d0d18]">
 
       {/* Background glow */}
       <div aria-hidden className="pointer-events-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px]"
@@ -154,14 +153,14 @@ export default function Media() {
 
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-space-grotesk font-black text-3xl sm:text-4xl text-white mb-3">
+          className="font-space-grotesk font-black text-3xl sm:text-4xl text-slate-900 dark:text-white mb-3">
           Press &amp;{" "}
           <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Interviews</span>
         </motion.h2>
 
         <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="text-white/40 font-inter text-sm mb-12 max-w-lg">
+          className="text-slate-900/40 dark:text-white/40 font-inter text-sm mb-12 max-w-lg">
           Featured appearances, keynote talks, and media conversations on AI, leadership, and the future of technology.
         </motion.p>
 

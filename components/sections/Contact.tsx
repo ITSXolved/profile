@@ -48,8 +48,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" ref={ref} className="relative py-28 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0d0d18 0%, #0a0a0f 100%)" }}>
+    <section id="contact" ref={ref} className="relative py-28 overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-[#0d0d18] dark:to-[#0a0a0f]">
       
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <motion.div
@@ -66,7 +65,7 @@ export default function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-space-grotesk font-black text-3xl sm:text-4xl text-white mb-16"
+          className="font-space-grotesk font-black text-3xl sm:text-4xl text-slate-900 dark:text-white mb-16"
         >
           Let&apos;s Build Something{" "}
           <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Great</span>
@@ -81,7 +80,7 @@ export default function Contact() {
             className="space-y-8"
           >
             <div className="space-y-6">
-              <p className="text-white/60 font-inter text-lg leading-relaxed max-w-md">
+              <p className="text-slate-900/60 dark:text-white/60 font-inter text-lg leading-relaxed max-w-md">
                 I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
               </p>
               
@@ -94,7 +93,7 @@ export default function Contact() {
 
             {/* Social Strip */}
             <div className="pt-6">
-              <p className="text-white/30 text-xs font-inter uppercase tracking-widest mb-4 font-semibold">Follow Me</p>
+              <p className="text-slate-900/30 dark:text-white/30 text-xs font-inter uppercase tracking-widest mb-4 font-semibold">Follow Me</p>
               <div className="flex gap-4">
                 {SOCIALS.map((soc) => (
                   <motion.a
@@ -103,7 +102,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -4, scale: 1.1 }}
-                    className="w-12 h-12 rounded-2xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-white/50 hover:text-white transition-colors"
+                    className="w-12 h-12 rounded-2xl bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.08] dark:border-white/[0.08] flex items-center justify-center text-slate-900/50 dark:text-white/50 hover:text-slate-900 dark:text-white transition-colors"
                   >
                     <soc.icon size={20} />
                   </motion.a>
@@ -117,56 +116,56 @@ export default function Contact() {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.3 }}
-            className="relative p-8 rounded-3xl bg-white/[0.02] border border-white/[0.08] backdrop-blur-sm"
+            className="relative p-8 rounded-3xl bg-slate-900/[0.02] dark:bg-white/[0.02] border border-slate-900/[0.08] dark:border-white/[0.08] backdrop-blur-sm"
           >
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="space-y-2">
-                  <label className="text-white/40 text-xs font-inter uppercase tracking-wider ml-1">Name</label>
+                  <label className="text-slate-900/40 dark:text-white/40 text-xs font-inter uppercase tracking-wider ml-1">Name</label>
                   <input
                     required
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-white/[0.04] border border-white/[0.1] rounded-2xl px-5 py-4 text-white font-inter text-sm focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.06] transition-all"
+                    className="w-full bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.1] dark:border-white/[0.1] rounded-2xl px-5 py-4 text-slate-900 dark:text-white font-inter text-sm focus:outline-none focus:border-violet-500/50 focus:bg-slate-900/[0.06] dark:bg-white/[0.06] transition-all"
                     placeholder="John Doe"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-white/40 text-xs font-inter uppercase tracking-wider ml-1">Email</label>
+                  <label className="text-slate-900/40 dark:text-white/40 text-xs font-inter uppercase tracking-wider ml-1">Email</label>
                   <input
                     required
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full bg-white/[0.04] border border-white/[0.1] rounded-2xl px-5 py-4 text-white font-inter text-sm focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.06] transition-all"
+                    className="w-full bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.1] dark:border-white/[0.1] rounded-2xl px-5 py-4 text-slate-900 dark:text-white font-inter text-sm focus:outline-none focus:border-violet-500/50 focus:bg-slate-900/[0.06] dark:bg-white/[0.06] transition-all"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-white/40 text-xs font-inter uppercase tracking-wider ml-1">Subject</label>
+                <label className="text-slate-900/40 dark:text-white/40 text-xs font-inter uppercase tracking-wider ml-1">Subject</label>
                 <select
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full bg-white/[0.04] border border-white/[0.1] rounded-2xl px-5 py-4 text-white font-inter text-sm focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.06] transition-all appearance-none"
+                  className="w-full bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.1] dark:border-white/[0.1] rounded-2xl px-5 py-4 text-slate-900 dark:text-white font-inter text-sm focus:outline-none focus:border-violet-500/50 focus:bg-slate-900/[0.06] dark:bg-white/[0.06] transition-all appearance-none"
                 >
-                  <option className="bg-[#0a0a0f]" value="Collaboration">Collaboration</option>
-                  <option className="bg-[#0a0a0f]" value="Hire">Hire</option>
-                  <option className="bg-[#0a0a0f]" value="Project">Project</option>
-                  <option className="bg-[#0a0a0f]" value="Other">Other</option>
+                  <option className="bg-white dark:bg-[#0a0a0f]" value="Collaboration">Collaboration</option>
+                  <option className="bg-white dark:bg-[#0a0a0f]" value="Hire">Hire</option>
+                  <option className="bg-white dark:bg-[#0a0a0f]" value="Project">Project</option>
+                  <option className="bg-white dark:bg-[#0a0a0f]" value="Other">Other</option>
                 </select>
               </div>
 
               <div className="space-y-2">
-                <label className="text-white/40 text-xs font-inter uppercase tracking-wider ml-1">Message</label>
+                <label className="text-slate-900/40 dark:text-white/40 text-xs font-inter uppercase tracking-wider ml-1">Message</label>
                 <textarea
                   required
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-white/[0.04] border border-white/[0.1] rounded-2xl px-5 py-4 text-white font-inter text-sm focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.06] transition-all resize-none"
+                  className="w-full bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.1] dark:border-white/[0.1] rounded-2xl px-5 py-4 text-slate-900 dark:text-white font-inter text-sm focus:outline-none focus:border-violet-500/50 focus:bg-slate-900/[0.06] dark:bg-white/[0.06] transition-all resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -174,7 +173,7 @@ export default function Contact() {
               <button
                 disabled={status === "submitting"}
                 type="submit"
-                className="w-full py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-500 text-white font-inter font-bold text-sm shadow-lg shadow-violet-500/20 hover:shadow-violet-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-4 rounded-2xl bg-gradient-to-r from-violet-600 to-indigo-500 text-slate-900 dark:text-white font-inter font-bold text-sm shadow-lg shadow-violet-500/20 hover:shadow-violet-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {status === "submitting" ? "Sending..." : "Send Message"}
               </button>
@@ -214,12 +213,12 @@ export default function Contact() {
 function ContactInfoCard({ icon: Icon, title, value, href }: { icon: React.ElementType, title: string, value: string, href?: string }) {
   const Card = () => (
     <div className="flex items-center gap-4 group cursor-pointer">
-      <div className="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 group-hover:bg-violet-500 group-hover:text-white transition-all duration-300">
+      <div className="w-12 h-12 rounded-2xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 group-hover:bg-violet-500 group-hover:text-slate-900 dark:text-white transition-all duration-300">
         <Icon size={20} />
       </div>
       <div>
-        <p className="text-white/30 text-[10px] font-inter uppercase tracking-widest font-bold leading-none mb-1">{title}</p>
-        <p className="text-white/80 font-inter text-sm font-medium group-hover:text-white transition-colors">{value}</p>
+        <p className="text-slate-900/30 dark:text-white/30 text-[10px] font-inter uppercase tracking-widest font-bold leading-none mb-1">{title}</p>
+        <p className="text-slate-900/80 dark:text-white/80 font-inter text-sm font-medium group-hover:text-slate-900 dark:text-white transition-colors">{value}</p>
       </div>
     </div>
   );

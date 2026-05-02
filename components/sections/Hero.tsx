@@ -53,8 +53,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ background: "#0a0a0f" }}
+      className="relative min-h-screen flex items-center overflow-hidden bg-white dark:bg-[#0a0a0f]"
     >
       {/* ── Full-page background photo ── */}
       <div className="absolute inset-0 z-0" aria-hidden>
@@ -64,16 +63,10 @@ export default function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center"
-          style={{ opacity: 0.18 }}
+          className="object-cover object-center opacity-[0.50] dark:opacity-[0.18] mix-blend-luminosity dark:mix-blend-normal"
         />
-        {/* dark vignette so edges fade into #0a0a0f */}
-        <div className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 80% at 50% 50%, transparent 30%, #0a0a0f 100%)",
-          }}
-        />
+        {/* dark/light vignette so edges fade into background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_30%,#ffffff_100%)] dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_50%,transparent_30%,#0a0a0f_100%)]" />
       </div>
 
       {/* ── Animated gradient mesh (CSS only) ── */}
@@ -100,7 +93,7 @@ export default function Hero() {
             {/* Greeting */}
             <motion.p
               variants={fadeUp}
-              className="text-violet-400 font-space-grotesk text-sm sm:text-base font-medium tracking-[0.2em] uppercase mb-4"
+              className="text-violet-600 dark:text-violet-400 font-space-grotesk text-sm sm:text-base font-medium tracking-[0.2em] uppercase mb-4"
             >
               Hello, I&apos;m
             </motion.p>
@@ -110,7 +103,7 @@ export default function Hero() {
               variants={fadeUp}
               className="font-space-grotesk font-black leading-none tracking-tight mb-4
                          text-4xl sm:text-5xl lg:text-6xl xl:text-7xl
-                         text-white"
+                         text-slate-900 dark:text-white"
             >
               {info.name}
             </motion.h1>
@@ -129,7 +122,7 @@ export default function Hero() {
                 className="
                   font-space-grotesk font-semibold
                   text-xl sm:text-2xl lg:text-3xl
-                  bg-gradient-to-r from-violet-400 via-fuchsia-400 to-indigo-400
+                  bg-gradient-to-r from-violet-600 via-fuchsia-600 to-indigo-600 dark:from-violet-400 dark:via-fuchsia-400 dark:to-indigo-400
                   bg-clip-text text-transparent
                 "
               />
@@ -138,7 +131,7 @@ export default function Hero() {
             {/* Subtext */}
             <motion.p
               variants={fadeUp}
-              className="text-white/50 text-sm sm:text-base font-inter leading-relaxed mb-10 max-w-md mx-auto md:mx-0"
+              className="text-slate-900/50 dark:text-white/50 text-sm sm:text-base font-inter leading-relaxed mb-10 max-w-md mx-auto md:mx-0"
             >
               {info.subtext}
             </motion.p>
@@ -157,7 +150,7 @@ export default function Hero() {
                   document.querySelector("#projects")?.scrollIntoView({ behavior: "smooth" });
                 }}
                 className="group relative inline-flex items-center justify-center gap-2
-                           px-7 py-3.5 rounded-2xl font-semibold text-sm font-inter text-white
+                           px-7 py-3.5 rounded-2xl font-semibold text-sm font-inter text-slate-900 dark:text-white
                            bg-gradient-to-r from-violet-600 to-indigo-500
                            shadow-lg shadow-violet-500/30
                            hover:shadow-violet-500/50 hover:scale-[1.03]
@@ -185,8 +178,8 @@ export default function Hero() {
                 download
                 className="inline-flex items-center justify-center gap-2
                            px-7 py-3.5 rounded-2xl font-semibold text-sm font-inter
-                           text-white/80 hover:text-white
-                           border border-white/20 hover:border-violet-500/60
+                           text-slate-900/80 dark:text-white/80 hover:text-slate-900 dark:text-white
+                           border border-slate-900/20 dark:border-white/20 hover:border-violet-500/60
                            hover:bg-violet-500/10 hover:scale-[1.03]
                            transition-all duration-300"
               >
@@ -198,7 +191,7 @@ export default function Hero() {
             {/* Scroll indicator */}
             <motion.div
               variants={fadeIn}
-              className="hidden md:flex items-center gap-2 mt-14 text-white/30"
+              className="hidden md:flex items-center gap-2 mt-14 text-slate-900/30 dark:text-white/30"
             >
               <span className="scroll-line" />
               <span className="text-xs font-inter tracking-widest uppercase">Scroll</span>

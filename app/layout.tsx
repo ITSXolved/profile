@@ -68,11 +68,10 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}
     >
-      <body className="font-inter antialiased bg-[#0a0a0f] text-white selection:bg-violet-500/30">
+      <body className="font-inter antialiased selection:bg-violet-500/30">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
           disableTransitionOnChange
         >
           <ScrollProgress />

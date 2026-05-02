@@ -87,8 +87,8 @@ function EduCard({ item }: { item: (typeof EDUCATION)[number] }) {
       variants={cardV}
       whileHover={{ scale: 1.03, y: -3 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
-      className="flex gap-4 p-5 rounded-2xl border border-white/[0.08] bg-white/[0.03]
-                 hover:border-opacity-60 hover:bg-white/[0.06]
+      className="flex gap-4 p-5 rounded-2xl border border-slate-900/[0.08] dark:border-white/[0.08] bg-slate-900/[0.03] dark:bg-white/[0.03]
+                 hover:border-opacity-60 hover:bg-slate-900/[0.06] dark:bg-white/[0.06]
                  transition-colors duration-300 cursor-default"
       style={{ ["--accent" as string]: color }}
     >
@@ -104,11 +104,11 @@ function EduCard({ item }: { item: (typeof EDUCATION)[number] }) {
           style={{ background: bg, color }}>
           {type}
         </span>
-        <h3 className="font-space-grotesk font-bold text-white text-sm leading-snug mb-0.5">
+        <h3 className="font-space-grotesk font-bold text-slate-900 dark:text-white text-sm leading-snug mb-0.5">
           {degree}
         </h3>
-        <p className="text-white/45 text-xs font-inter leading-tight truncate">{institution}</p>
-        <p className="text-white/30 text-xs font-inter mt-1">{year}</p>
+        <p className="text-slate-900/45 dark:text-white/45 text-xs font-inter leading-tight truncate">{institution}</p>
+        <p className="text-slate-900/30 dark:text-white/30 text-xs font-inter mt-1">{year}</p>
       </div>
     </motion.div>
   );
@@ -120,8 +120,7 @@ export default function Education() {
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="education" ref={ref} className="relative py-20 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0a0a0f 0%, #0d0d18 100%)" }}>
+    <section id="education" ref={ref} className="relative py-20 overflow-hidden bg-gradient-to-b from-white to-slate-50 dark:from-[#0a0a0f] dark:to-[#0d0d18]">
 
       <div aria-hidden className="pointer-events-none absolute inset-0"
         style={{ background: "radial-gradient(ellipse 50% 40% at 50% 0%, rgba(108,99,255,0.06) 0%, transparent 70%)" }} />
@@ -137,7 +136,7 @@ export default function Education() {
 
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-space-grotesk font-black text-2xl sm:text-3xl text-white mb-8">
+          className="font-space-grotesk font-black text-2xl sm:text-3xl text-slate-900 dark:text-white mb-8">
           Academic{" "}
           <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">
             Background

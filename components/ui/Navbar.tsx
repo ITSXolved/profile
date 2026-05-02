@@ -50,7 +50,7 @@ export default function Navbar() {
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-500
         ${scrolled
-          ? "bg-[#0a0a0f]/90 dark:bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-white/[0.06] shadow-lg shadow-black/20"
+          ? "bg-white/90 dark:bg-[#0a0a0f]/90 backdrop-blur-xl border-b border-slate-900/[0.06] dark:border-white/[0.06] shadow-lg shadow-black/5 dark:shadow-black/20"
           : "bg-transparent"
         }
       `}
@@ -71,7 +71,7 @@ export default function Navbar() {
             group-hover:shadow-violet-500/50 group-hover:scale-105
             transition-all duration-300
           ">
-            <span className="font-space-grotesk font-bold text-white text-sm tracking-tight">
+            <span className="font-space-grotesk font-bold text-slate-900 dark:text-white text-sm tracking-tight">
               SA
             </span>
             {/* pulse ring */}
@@ -88,7 +88,7 @@ export default function Navbar() {
                 onClick={(e) => { e.preventDefault(); scrollTo(href); setMenuOpen(false); }}
                 className="
                   relative px-4 py-2 text-sm font-medium font-inter
-                  text-white/70 hover:text-white
+                  text-slate-900/70 dark:text-white/70 hover:text-slate-900 dark:text-white
                   transition-colors duration-200
                   after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2
                   after:h-0.5 after:w-0 hover:after:w-4/5
@@ -111,8 +111,8 @@ export default function Navbar() {
             onClick={() => setTheme(isDark ? "light" : "dark")}
             className="
               w-9 h-9 rounded-lg flex items-center justify-center
-              text-white/70 hover:text-white
-              hover:bg-white/10
+              text-slate-900/70 dark:text-white/70 hover:text-slate-900 dark:text-white
+              hover:bg-slate-900/10 dark:bg-white/10
               transition-all duration-200
             "
           >
@@ -121,7 +121,7 @@ export default function Navbar() {
                 ? <HiOutlineSun size={18} />
                 : <HiOutlineMoon size={18} />
             ) : (
-              <span className="w-4 h-4 rounded-full bg-white/20" />
+              <span className="w-4 h-4 rounded-full bg-slate-900/20 dark:bg-white/20" />
             )}
           </button>
 
@@ -132,7 +132,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen((v) => !v)}
             className="
               md:hidden w-9 h-9 rounded-lg flex items-center justify-center
-              text-white/70 hover:text-white hover:bg-white/10
+              text-slate-900/70 dark:text-white/70 hover:text-slate-900 dark:text-white hover:bg-slate-900/10 dark:bg-white/10
               transition-all duration-200
             "
           >
@@ -150,7 +150,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="md:hidden overflow-hidden bg-[#0a0a0f]/95 backdrop-blur-2xl border-b border-white/[0.06]"
+            className="md:hidden overflow-hidden bg-white/95 dark:bg-[#0a0a0f]/95 backdrop-blur-2xl border-b border-slate-900/[0.06] dark:border-white/[0.06]"
           >
             <motion.ul
               initial="closed"
@@ -176,7 +176,7 @@ export default function Navbar() {
                     onClick={(e) => { e.preventDefault(); scrollTo(href); setMenuOpen(false); }}
                     className="
                       flex items-center gap-3 px-4 py-3 rounded-xl
-                      text-white/70 hover:text-white hover:bg-white/[0.06]
+                      text-slate-900/70 dark:text-white/70 hover:text-slate-900 dark:text-white hover:bg-slate-900/[0.06] dark:bg-white/[0.06]
                       font-medium text-sm font-inter
                       transition-all duration-200
                     "

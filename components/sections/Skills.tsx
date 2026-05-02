@@ -72,10 +72,10 @@ function SkillBar({ name, pct, color, i, animate }: BarSkill & { i: number; anim
   return (
     <div className="space-y-1.5">
       <div className="flex justify-between items-center text-sm font-inter">
-        <span className="text-white/75 font-medium">{name}</span>
-        <span className="text-white/40 text-xs tabular-nums">{pct}%</span>
+        <span className="text-slate-900/75 dark:text-white/75 font-medium">{name}</span>
+        <span className="text-slate-900/40 dark:text-white/40 text-xs tabular-nums">{pct}%</span>
       </div>
-      <div className="h-2 rounded-full bg-white/[0.06] overflow-hidden">
+      <div className="h-2 rounded-full bg-slate-900/[0.06] dark:bg-white/[0.06] overflow-hidden">
         <motion.div
           className={`h-full rounded-full bg-gradient-to-r ${color}`}
           initial={{ width: 0 }}
@@ -93,14 +93,14 @@ function IconCard({ name, icon: Icon, color }: IconSkill) {
       whileHover={{ scale: 1.06, y: -3 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className="flex flex-col items-center gap-2.5 p-4 rounded-2xl
-                 bg-white/[0.04] border border-white/[0.07]
-                 hover:border-violet-500/30 hover:bg-white/[0.07]
+                 bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.07] dark:border-white/[0.07]
+                 hover:border-violet-500/30 hover:bg-slate-900/[0.07] dark:bg-white/[0.07]
                  transition-colors duration-300 cursor-default"
     >
-      <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-white/[0.06]">
+      <div className="w-11 h-11 rounded-xl flex items-center justify-center bg-slate-900/[0.06] dark:bg-white/[0.06]">
         <Icon size={24} style={{ color }} />
       </div>
-      <span className="text-white/60 text-xs font-inter font-medium text-center leading-tight">{name}</span>
+      <span className="text-slate-900/60 dark:text-white/60 text-xs font-inter font-medium text-center leading-tight">{name}</span>
     </motion.div>
   );
 }
@@ -115,7 +115,7 @@ function RingCard({ name, icon: Icon, pct, color, animate }: RingSkill & { anima
       whileHover={{ scale: 1.04, y: -2 }}
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className="flex flex-col items-center gap-3 p-5 rounded-2xl
-                 bg-white/[0.04] border border-white/[0.07]
+                 bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.07] dark:border-white/[0.07]
                  hover:border-violet-500/30 transition-colors duration-300"
     >
       <div className="relative w-24 h-24 flex items-center justify-center">
@@ -133,10 +133,10 @@ function RingCard({ name, icon: Icon, pct, color, animate }: RingSkill & { anima
         </svg>
         <div className="flex flex-col items-center">
           <Icon size={22} style={{ color }} />
-          <span className="text-white font-space-grotesk font-bold text-base mt-0.5">{pct}%</span>
+          <span className="text-slate-900 dark:text-white font-space-grotesk font-bold text-base mt-0.5">{pct}%</span>
         </div>
       </div>
-      <span className="text-white/70 text-sm font-inter font-semibold">{name}</span>
+      <span className="text-slate-900/70 dark:text-white/70 text-sm font-inter font-semibold">{name}</span>
     </motion.div>
   );
 }
@@ -193,8 +193,7 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section id="skills" ref={ref} className="relative py-28 overflow-hidden"
-      style={{ background: "linear-gradient(180deg, #0d0d18 0%, #0a0a0f 100%)" }}>
+    <section id="skills" ref={ref} className="relative py-28 overflow-hidden bg-gradient-to-b from-slate-50 to-white dark:from-[#0d0d18] dark:to-[#0a0a0f]">
 
       {/* bg accent */}
       <div aria-hidden className="pointer-events-none absolute top-20 right-0 w-[600px] h-[600px]"
@@ -211,7 +210,7 @@ export default function Skills() {
 
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-space-grotesk font-black text-3xl sm:text-4xl text-white mb-12">
+          className="font-space-grotesk font-black text-3xl sm:text-4xl text-slate-900 dark:text-white mb-12">
           Technical{" "}
           <span className="bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Arsenal</span>
         </motion.h2>
@@ -219,7 +218,7 @@ export default function Skills() {
         {/* Tab switcher */}
         <motion.div initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap gap-2 mb-8 p-1.5 rounded-2xl bg-white/[0.04] border border-white/[0.07] w-fit">
+          className="flex flex-wrap gap-2 mb-8 p-1.5 rounded-2xl bg-slate-900/[0.04] dark:bg-white/[0.04] border border-slate-900/[0.07] dark:border-white/[0.07] w-fit">
           {TABS.map(({ id, label, icon: Icon }) => (
             <button
               key={id}
@@ -229,8 +228,8 @@ export default function Skills() {
                 relative flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-inter font-semibold
                 transition-all duration-250
                 ${active === id
-                  ? "text-white shadow-lg shadow-violet-500/20"
-                  : "text-white/40 hover:text-white/70"
+                  ? "text-slate-900 dark:text-white shadow-lg shadow-violet-500/20"
+                  : "text-slate-900/40 dark:text-white/40 hover:text-slate-900/70 dark:text-white/70"
                 }
               `}
             >
@@ -250,7 +249,7 @@ export default function Skills() {
         {/* Panel */}
         <motion.div initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="min-h-[280px] p-6 sm:p-8 rounded-3xl bg-white/[0.03] border border-white/[0.07]">
+          className="min-h-[280px] p-6 sm:p-8 rounded-3xl bg-slate-900/[0.03] dark:bg-white/[0.03] border border-slate-900/[0.07] dark:border-white/[0.07]">
           <AnimatePresence mode="wait">
             {active === "aiml"      && <AiMlPanel animate={isInView} />}
             {active === "genai"     && <GenAiPanel />}
