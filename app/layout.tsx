@@ -22,6 +22,7 @@ const spaceGrotesk = Space_Grotesk({
 // ─── Metadata ─────────────────────────────────────────────────────────────────
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sainul.info"),
   title: "Sainul Abid M | AI Technology Leader",
   description:
     "CTO at Iluzia Labs & Director at AyaTech. Architecting intelligent systems with GenAI, Machine Learning, and Immersive Tech.",
