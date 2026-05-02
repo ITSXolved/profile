@@ -43,7 +43,7 @@ export default async function Image() {
           </div>
           <div style={{ marginTop: 40, display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ width: 40, height: 1, background: 'rgba(255, 255, 255, 0.2)' }} />
-            <div style={{ color: 'rgba(255, 255, 255, 0.3)', fontSize: 18, textTransform: 'uppercase', letterSpacing: '0.1em' }}>sainulabid.com</div>
+            <div style={{ color: 'rgba(255, 255, 255, 0.3)', fontSize: 18, textTransform: 'uppercase', letterSpacing: '0.1em' }}>www.sainul.info</div>
             <div style={{ width: 40, height: 1, background: 'rgba(255, 255, 255, 0.2)' }} />
           </div>
         </div>

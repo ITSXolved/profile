@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sainul Abid M | AI Technology Leader",
     description: "Building the future of intelligent systems through GenAI, ML, and Immersive Tech.",
-    url: "https://sainulabid.com", // Placeholder
+    url: "https://www.sainul.info",
     siteName: "Sainul Abid M Portfolio",
     images: [
       {
