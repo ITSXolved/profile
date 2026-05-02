@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from "@vercel/analytics/react";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 import BackToTop from "@/components/ui/BackToTop";
 import "./globals.css";
@@ -77,6 +78,7 @@ export default function RootLayout({
         >
           <ScrollProgress />
           {children}
+          <Analytics />
           <BackToTop />
         </ThemeProvider>
       </body>
