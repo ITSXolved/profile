@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>',
-      to: ['hello@sainulabid.com'], // In production, this should be the user's verified email
+      to: ['zainuscloud@gmail.com'], // Deliver straight to the new email
       subject: `Portfolio Contact: ${subject}`,
       replyTo: email,
       html: `
