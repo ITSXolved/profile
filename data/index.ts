@@ -6,6 +6,7 @@ export interface PersonalInfo {
   taglines: string[];
   email: string;
   linkedin: string;
+  github: string;
   location: string;
 }
 
@@ -57,6 +58,7 @@ export const personalInfo: PersonalInfo = {
   ],
   email: "zainuscloud@gmail.com",
   linkedin: "https://linkedin.com/in/sainul-abid-m-585810213",
+  github: "https://github.com/ITSXolved",
   location: "Kerala, India",
   cvPath: "/images/SAINUL ABID M Resume.pdf",
   photo: "/images/Speaking in PrOGRAM.jpeg",

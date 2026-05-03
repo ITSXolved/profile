@@ -8,7 +8,7 @@ import { personalInfo } from "@/data";
 
 const SOCIALS = [
   { icon: FaLinkedin, href: personalInfo.linkedin, label: "LinkedIn", color: "#0077b5" },
-  { icon: FaGithub, href: "https://github.com", label: "GitHub", color: "#333" }, // Placeholder GitHub
+  { icon: FaGithub, href: personalInfo.github, label: "GitHub", color: "#333" },
   { icon: FaEnvelope, href: `mailto:${personalInfo.email}`, label: "Email", color: "#EA4335" },
 ];
 
