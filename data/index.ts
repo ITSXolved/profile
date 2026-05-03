@@ -209,6 +209,12 @@ export const education: EducationItem[] = [
     year: "2013",
     type: "Bachelors",
   },
+  {
+    degree: "UGC NET in Electronic Science",
+    institution: "National Testing Agency, India",
+    year: "2022",
+    type: "National Exam",
+  },
 ];
 
 // ─── Projects ─────────────────────────────────────────────────────────────────
