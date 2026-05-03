@@ -89,7 +89,7 @@ export const skills: SkillCategory[] = [
   {
     category: "Cloud & DevOps",
     skills: [
-      { name: "AWS / Azure", proficiency: 85 },
+      { name: "AWS / Azure /GCP", proficiency: 85 },
       { name: "Docker / Kubernetes / MLflow", proficiency: 82 },
       { name: "Git / CI/CD", proficiency: 88 },
     ],
@@ -121,7 +121,7 @@ export const experience: ExperienceItem[] = [
     period: "Mar 2026 – Present",
     points: [
       "Leading strategic AI product direction and full-stack engineering across all AyaTech verticals.",
-      "Overseeing multi-disciplinary teams building EdTech, pharma-IT, and retail AI platforms.",
+      "Overseeing multi-disciplinary teams building EdTech and retail AI platforms.",
       "Driving data-driven decision-making through advanced analytics and executive dashboards.",
       "Establishing AI governance frameworks and scalable MLOps infrastructure.",
     ],
@@ -142,7 +142,7 @@ export const experience: ExperienceItem[] = [
     company: "Photon Interactive",
     period: "Oct 2023 – Jan 2025",
     points: [
-      "Designed real-time analytics pipelines handling 50k+ events/sec for retail clients.",
+      "Designed real-time analytics pipelines handling 50k+ events/sec for pharma-IT clients.",
       "Delivered personalisation engines improving click-through rates by 38%.",
       "Migrated legacy ETL workflows to cloud-native solutions on AWS, reducing cost by 45%.",
       "Mentored a team of 4 junior data engineers in best practices and code quality.",
@@ -153,10 +153,10 @@ export const experience: ExperienceItem[] = [
     company: "Pristine AI",
     period: "Jan 2022 – Oct 2023",
     points: [
-      "Built NLP classifiers achieving 94% accuracy for pharmaceutical document categorisation.",
-      "Deployed computer vision models for real-time defect detection on manufacturing edge devices.",
-      "Developed cognitive load prediction models for adaptive e-learning systems.",
-      "Published research on sustainable urbanisation data modelling in collaboration with ASEF.",
+      "Successfully implemented a new Liquid Neural Network for model building, improving accuracy and performance.",
+      "Designed and implemented predictive models utilizing diverse data sources to predict demand and risk.",
+      "Expertly designed a dynamic user interface using behavior analysis to preempt actions and enhance efficiency.",
+      "Integrated Knowledge Graphs with context panels to enable more effective data visualization and decision-making.",
     ],
   },
   {
@@ -166,7 +166,7 @@ export const experience: ExperienceItem[] = [
     points: [
       "Delivered hands-on robotics, AI, and coding curriculum to 3,000+ students across GCC.",
       "Designed and iterated STEM programme content adopted by 20+ schools.",
-      "Managed cross-cultural student cohorts, developing adaptive instructional strategies.",
+      "Managed cross-cultural student cohorts and developed adaptive instructional strategies.",
     ],
   },
 ];
@@ -175,21 +175,21 @@ export const experience: ExperienceItem[] = [
 
 export const education: EducationItem[] = [
   {
-    degree: "M.Tech in Cognitive Science",
+    degree: "M.Sc in Cognitive Science",
     institution: "CBCS, University of Allahabad",
     year: "2021 – 2023",
     type: "Masters",
   },
   {
-    degree: "B.Tech in Electronics and Communication Engineering",
+    degree: "B.Tech in Electrical and Electronics Engineering",
     institution: "CUSAT, Kochi, Kerala",
-    year: "2010 – 2014",
+    year: "2009 – 2013",
     type: "Bachelors",
   },
   {
     degree: "UGC NET Qualified",
     institution: "National Testing Agency, India",
-    year: "2023",
+    year: "2022",
     type: "National Exam",
   },
 ];
@@ -198,51 +198,51 @@ export const education: EducationItem[] = [
 
 export const projects: Project[] = [
   {
-    title: "IT HelpDesk AI",
-    tags: ["GenAI", "RAG", "Kubernetes"],
+    title: "Data-Driven Education Ecosystem",
+    tags: ["EdTech", "GenAI", "Power BI"],
     description:
-      "Enterprise GenAI helpdesk for Medimpact/Photon with RAG pipelines, LangChain agents, and Kubernetes orchestration — slashing ticket resolution time by 60%.",
-    featured: true,
-    image: "/images/Speaking in PrOGRAM.jpeg",
-  },
-  {
-    title: "AI Education Ecosystem",
-    tags: ["EdTech", "GenAI", "Agentic AI"],
-    description:
-      "Agentic data-driven EdTech ecosystem for AILT Gujarat — adaptive curricula, AI tutors, and real-time learning analytics for 10,000+ students.",
+      "Created an automated ecosystem for AILT Global featuring automatic lesson plan creation (Gemini API), behavior management dashboards, and Power BI integration.",
     featured: true,
     image: "/images/iNTERACTION WITH CHILDREN.jpeg",
+  },
+  {
+    title: "Liquid Neural Network Forecasting",
+    tags: ["ML/Data", "Retail AI", "Research"],
+    description:
+      "Implemented a novel Liquid Neural Network architecture at Pristine AI for real-time demand forecasting and risk prediction, significantly improving accuracy over traditional models.",
+    featured: true,
+    image: "/images/iNTERACTION WITH A MR. IDRIS VOHRA.jpeg",
+  },
+  {
+    title: "Pupil Dynamics Behavioral Classifier",
+    tags: ["ML/Data", "Research", "Cognitive Science"],
+    description:
+      "Developed a system using PCA algorithms to classify behavioral states from pupil dynamics with 98% accuracy, improving eye tracking and cognitive research tools.",
+    featured: true,
+    image: "/images/InteractionwithChildren.jpeg",
   },
   {
     title: "VR Training System",
     tags: ["VR", "Agentic AI", "EdTech"],
     description:
-      "Immersive VR + Agentic AI training platform for a Saudi enterprise client via Iluzia Labs — real-time AI feedback inside Unity WebGL environments.",
+      "Immersive VR + Agentic AI training platform developed at Iluzia Labs — featuring real-time AI feedback inside Unity WebGL environments for enterprise learners.",
     featured: true,
     image: "/images/Talking In Profsummit.jpeg",
   },
   {
-    title: "Liquid Neural Network — Retail AI",
-    tags: ["ML/Data", "Retail AI", "Research"],
+    title: "Waste Management — Dhaka City",
+    tags: ["Research", "Sustainability", "ASEF"],
     description:
-      "Applied Liquid Neural Networks to real-time retail demand forecasting at Pristine AI, outperforming LSTM baselines by 22% on volatile SKUs.",
-    featured: true,
-    image: "/images/iNTERACTION WITH A MR. IDRIS VOHRA.jpeg",
-  },
-  {
-    title: "Pupil Dynamics Classifier",
-    tags: ["ML/Data", "Research", "Cognitive Science"],
-    description:
-      "PCA + ensemble ML pipeline classifying cognitive load from pupil dilation signals — 91% accuracy on a 3-class cognitive-state dataset.",
-    featured: true,
-    image: "/images/InteractionwithChildren.jpeg",
-  },
-  {
-    title: "Waste Management — ASEF Hackathon",
-    tags: ["Research", "Sustainability", "ML/Data"],
-    description:
-      "Award-winning predictive waste-flow model for smart-city route optimisation, presented at the Asia-Europe Sustainable Futures hackathon.",
+      "Award-winning technological solution for waste management in Dhaka, presented at the ASEF Hackathon and published in The Daily Star.",
     featured: true,
     image: "/images/Meeting with ObaidullaKhan Azmi.jpeg",
+  },
+  {
+    title: "Intelligent Tutoring System",
+    tags: ["AWS", "ML", "Adaptive Learning"],
+    description:
+      "Personalized learning platform on AWS using adaptive content delivery algorithms to promote inclusive education through individualized tutoring.",
+    featured: true,
+    image: "/images/Speaking in PrOGRAM.jpeg",
   },
 ];
