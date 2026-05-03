@@ -145,7 +145,7 @@ export const experience: ExperienceItem[] = [
       "Designed real-time analytics pipelines handling 50k+ events/sec for retail clients.",
       "Delivered personalisation engines improving click-through rates by 38%.",
       "Migrated legacy ETL workflows to cloud-native solutions on AWS, reducing cost by 45%.",
-      "Led cross-functional teams to integrate AI models into production environments.",
+      "Mentored a team of 4 junior data engineers in best practices and code quality.",
     ],
   },
   {
