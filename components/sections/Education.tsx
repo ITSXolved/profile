@@ -7,64 +7,36 @@ import {
   HiOutlineChip, HiOutlineGlobe,
 } from "react-icons/hi";
 import { FaFlask } from "react-icons/fa";
+import type { IconType } from "react-icons";
+import { education } from "@/data";
 
-// ─── Education data ────────────────────────────────────────────────────────────
-const EDUCATION = [
-  {
-    degree: "MSc Cognitive Science",
-    institution: "University College Cork (UCC)",
-    year: "2021 – 2022",
-    icon: HiOutlineAcademicCap,
-    color: "#6C63FF",
-    bg: "rgba(108,99,255,0.12)",
-    type: "Masters",
-  },
-  {
-    degree: "Diploma — Cloud Computing",
-    institution: "NIELIT (Govt. of India)",
-    year: "2022",
-    icon: HiOutlineChip,
-    color: "#00B4D8",
-    bg: "rgba(0,180,216,0.12)",
-    type: "Certification",
-  },
-  {
-    degree: "B.Tech — Electrical & Electronics",
-    institution: "APJ Abdul Kalam Tech. University",
-    year: "2010 – 2014",
-    icon: HiOutlineBriefcase,
-    color: "#06D6A0",
-    bg: "rgba(6,214,160,0.12)",
-    type: "Bachelors",
-  },
-  {
-    degree: "PG Diploma — Applied Statistics",
-    institution: "IGNOU (Indira Gandhi National Open University)",
-    year: "2023 – 2024",
-    icon: FaFlask,
-    color: "#FFA500",
-    bg: "rgba(255,165,0,0.12)",
-    type: "PG Diploma",
-  },
-  {
-    degree: "CCPD",
-    institution: "University College Cork (UCC)",
-    year: "2020",
-    icon: HiOutlineGlobe,
-    color: "#FF6B6B",
-    bg: "rgba(255,107,107,0.12)",
-    type: "Certificate",
-  },
-  {
-    degree: "UGC NET",
-    institution: "National Testing Agency, India",
-    year: "Qualified",
-    icon: HiOutlineAcademicCap,
-    color: "#A855F7",
-    bg: "rgba(168,85,247,0.12)",
-    type: "National Exam",
-  },
-];
+// Map types to icons for dynamic rendering
+const ICON_MAP: Record<string, IconType> = {
+  "Masters": HiOutlineAcademicCap,
+  "Bachelors": HiOutlineBriefcase,
+  "National Exam": HiOutlineAcademicCap,
+  "Certification": HiOutlineChip,
+  "PG Diploma": FaFlask,
+  "Certificate": HiOutlineGlobe,
+};
+
+const COLOR_MAP: Record<string, string> = {
+  "Masters": "#6C63FF",
+  "Bachelors": "#06D6A0",
+  "National Exam": "#A855F7",
+  "Certification": "#00B4D8",
+  "PG Diploma": "#FFA500",
+  "Certificate": "#FF6B6B",
+};
+
+const BG_MAP: Record<string, string> = {
+  "Masters": "rgba(108,99,255,0.12)",
+  "Bachelors": "rgba(6,214,160,0.12)",
+  "National Exam": "rgba(168,85,247,0.12)",
+  "Certification": "rgba(0,180,216,0.12)",
+  "PG Diploma": "rgba(255,165,0,0.12)",
+  "Certificate": "rgba(255,107,107,0.12)",
+};
 
 // ─── Animation variants ────────────────────────────────────────────────────────
 const containerV: Variants = {
@@ -80,8 +52,12 @@ const cardV: Variants = {
 };
 
 // ─── Education Card ────────────────────────────────────────────────────────────
-function EduCard({ item }: { item: (typeof EDUCATION)[number] }) {
-  const { icon: Icon, color, bg, degree, institution, year, type } = item;
+function EduCard({ item }: { item: (typeof education)[number] }) {
+  const Icon = ICON_MAP[item.type] || HiOutlineAcademicCap;
+  const color = COLOR_MAP[item.type] || "#6C63FF";
+  const bg = BG_MAP[item.type] || "rgba(108,99,255,0.12)";
+  const { degree, institution, year, type } = item;
+
   return (
     <motion.div
       variants={cardV}
@@ -147,7 +123,7 @@ export default function Education() {
         <div className="block md:hidden">
           {/* mobile: horizontal scroll */}
           <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
-            {EDUCATION.map((item) => (
+            {education.map((item) => (
               <div key={item.degree} className="snap-start flex-shrink-0 w-72">
                 <EduCard item={item} />
               </div>
@@ -157,7 +133,7 @@ export default function Education() {
 
         <motion.div variants={containerV} initial="hidden" animate={isInView ? "show" : "hidden"}
           className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-4">
-          {EDUCATION.map((item) => (
+          {education.map((item) => (
             <EduCard key={item.degree} item={item} />
           ))}
         </motion.div>
