@@ -180,22 +180,34 @@ export const experience: ExperienceItem[] = [
 
 export const education: EducationItem[] = [
   {
+    degree: "PG Diploma in Applied Statistics",
+    institution: "IGNOU",
+    year: "Pursuing",
+    type: "PG Diploma",
+  },
+  {
     degree: "M.Sc in Cognitive Science",
-    institution: "CBCS, University of Allahabad",
-    year: "2021 – 2023",
+    institution: "Centre of Behavioral and Cognitive Science, Allahabad",
+    year: "2022",
     type: "Masters",
   },
   {
-    degree: "B.Tech in Electrical and Electronics Engineering",
-    institution: "CUSAT, Kochi, Kerala",
-    year: "2009 – 2013",
-    type: "Bachelors",
+    degree: "CCPD (Global Leadership and Sustainable Urbanization)",
+    institution: "University College of Cork, Ireland",
+    year: "2021",
+    type: "Certificate",
   },
   {
-    degree: "UGC NET Qualified",
-    institution: "National Testing Agency, India",
-    year: "2022",
-    type: "National Exam",
+    degree: "Advanced Diploma (Cloud Computing)",
+    institution: "NIELIT, Calicut",
+    year: "2017",
+    type: "Certification",
+  },
+  {
+    degree: "B.Tech in Electrical and Electronics Engineering",
+    institution: "Govt. Engineering College, Thrissur",
+    year: "2013",
+    type: "Bachelors",
   },
 ];
 
