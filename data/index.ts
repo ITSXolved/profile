@@ -67,47 +67,42 @@ export const personalInfo: PersonalInfo = {
 
 export const skills: SkillCategory[] = [
   {
-    category: "AI & Machine Learning",
+    category: "Generative AI & Agents",
     skills: [
-      { name: "Python / Scikit-learn", proficiency: 95 },
-      { name: "PyTorch / TensorFlow", proficiency: 90 },
-      { name: "NLP (NLTK, Spacy)", proficiency: 92 },
-      { name: "Computer Vision (OpenCV)", proficiency: 88 },
-      { name: "LLMs / Hugging Face", proficiency: 94 },
-      { name: "RAG / LangChain", proficiency: 92 },
+      { name: "LLMs (GPT, Claude, Gemini, Llama)", proficiency: 98 },
+      { name: "RAG & Multimodal RAG", proficiency: 95 },
+      { name: "Agentic Systems (LangChain, LlamaIndex, AutoGen)", proficiency: 94 },
+      { name: "Vector DBs (Chroma, FAISS)", proficiency: 92 },
+      { name: "Chainlit / Streamlit / Flask", proficiency: 90 },
+    ],
+  },
+  {
+    category: "Machine Learning & Research",
+    skills: [
+      { name: "Python / R / MATLAB", proficiency: 96 },
+      { name: "Advanced Algos (LNN, XGBoost, Transformers)", proficiency: 94 },
+      { name: "Statistical Modeling (MLE, ARIMA, Time Series)", proficiency: 92 },
+      { name: "Computer Vision & NLP", proficiency: 90 },
+      { name: "Feature Engineering & Ensemble Learning", proficiency: 92 },
     ],
   },
   {
     category: "Data Engineering & BI",
     skills: [
-      { name: "SQL / PostgreSQL", proficiency: 90 },
-      { name: "Pandas / NumPy / Keras", proficiency: 92 },
-      { name: "Tableau / Power BI", proficiency: 88 },
-      { name: "Seaborn / Matplotlib", proficiency: 90 },
+      { name: "SQL (Oracle) / PySpark", proficiency: 90 },
+      { name: "Power BI / DAX / Power Apps", proficiency: 92 },
+      { name: "Big Query / Snowflake", proficiency: 88 },
+      { name: "Data Augmentation & ETL", proficiency: 90 },
     ],
   },
   {
-    category: "Cloud & DevOps",
+    category: "Cloud & MLOps",
     skills: [
-      { name: "AWS / Azure /GCP", proficiency: 85 },
-      { name: "Docker / Kubernetes / MLflow", proficiency: 82 },
-      { name: "Git / CI/CD", proficiency: 88 },
-    ],
-  },
-  {
-    category: "Web Tech",
-    skills: [
-      { name: "FastAPI / Flask", proficiency: 92 },
-      { name: "Next.js / TypeScript", proficiency: 85 },
-      { name: "Tailwind CSS", proficiency: 88 },
-    ],
-  },
-  {
-    category: "Strategic Leadership",
-    skills: [
-      { name: "AI Strategy & Roadmap", proficiency: 94 },
-      { name: "Team Leadership", proficiency: 92 },
-      { name: "Cognitive Science R&D", proficiency: 90 },
+      { name: "AWS (SageMaker, S3, EC2, Lambda)", proficiency: 92 },
+      { name: "Azure (OpenAI, Functions, CosmosDB)", proficiency: 90 },
+      { name: "GCP (Vertex AI, Cloud Run)", proficiency: 88 },
+      { name: "Docker / Kubernetes / ArgoCD", proficiency: 85 },
+      { name: "CI/CD (Jenkins, Bitbucket, Git)", proficiency: 88 },
     ],
   },
 ];
